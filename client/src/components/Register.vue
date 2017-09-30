@@ -2,25 +2,30 @@
 <v-layout column>
   <v-flex xs6 offset-xs3>
     <div class="white elevation-2 ">
-      <v-toolbar flat dense class="blue" dark>
+      <v-toolbar flat dense class="light-blue lighten-3" dark>
         <v-toolbar-title>Sign Up</v-toolbar-title>
       </v-toolbar>
       <div class="pt-2 pl-4 pr-4 pb-2">
-        <input 
-          type="email" 
-          name="email"
-          v-model="email"
-          placeholder="email">
+        <v-text-field
+              
+              label="Email"
+              v-model="email"
+              
+            ></v-text-field>
           <br>
-          <input 
-          type="password" 
-          name="password"
-          v-model="password"
-          placeholder="password">
+          <v-text-field
+              
+              label="Enter your password"
+              hint="At least 8 characters"
+              v-model="password"
+              min="8"
+              
+            ></v-text-field>
+          
         <br>
         <div class="error" v-html="error"/>
         <br>
-        <v-btn class="blue" @click="register">Register</v-btn>
+        <v-btn class="light-blue lighten-3" @click="register">Register</v-btn>
       </div>
     </div>
   </v-flex>
@@ -60,4 +65,6 @@ export default {
   .error {
     color: red;
   }
+
+
 </style>

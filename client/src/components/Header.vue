@@ -1,7 +1,9 @@
 <template>
 <v-toolbar fixed class="light-blue lighten-3" dark>
-    <v-toolbar-title class="mr-4"> 
-        Tripped Up
+    <v-toolbar-title to="root" class="mr-4"> 
+        <span @click="navigateTo({name: 'root'})">
+            Tripped UP
+        </span>
     </v-toolbar-title>
     <!-- <v-toolbar-items>
         <v-btn flat dark>
@@ -10,6 +12,9 @@
     </v-toolbar-items> -->
     <v-spacer></v-spacer>
     <v-toolbar-items>
+        <v-btn flat dark to="login">
+            Login
+        </v-btn>
         <v-btn flat dark to="register">
             Sign Up
         </v-btn>
@@ -20,6 +25,11 @@
 
 <script>
 export default {
+  methods: {
+    navigateTo (route) {
+      this.$router.push(route)
+    }
+  }
 }
 </script>
 

@@ -6,6 +6,9 @@
         <v-toolbar-title>Sign Up</v-toolbar-title>
       </v-toolbar>
       <div class="pt-2 pl-4 pr-4 pb-2">
+        <form
+        name="tripped-up-form"
+        autocomplete="off">
         <v-text-field
               
               label="Email"
@@ -14,14 +17,15 @@
             ></v-text-field>
           <br>
           <v-text-field
-              
+              type="password"
               label="Enter your password"
               hint="At least 8 characters"
               v-model="password"
               min="8"
+              autocomplete="new-password"
               
             ></v-text-field>
-          
+          </form>
         <br>
         <div class="error" v-html="error"/>
         <br>

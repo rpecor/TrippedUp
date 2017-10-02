@@ -14,7 +14,7 @@
             ></v-text-field>
           <br>
           <v-text-field
-              
+              type="password"
               label="Enter your password"
               hint="At least 8 characters"
               v-model="password"

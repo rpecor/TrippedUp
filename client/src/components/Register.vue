@@ -25,7 +25,7 @@
         <br>
         <div class="error" v-html="error"/>
         <br>
-        <v-btn class="light-blue lighten-3" @click="register">Register</v-btn>
+        <v-btn class="light-blue lighten-3" dark @click="register">Register</v-btn>
       </div>
     </div>
   </v-flex>

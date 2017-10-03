@@ -4,6 +4,7 @@ import Hello from '@/components/Hello'
 import Register from '@/components/Register'
 import Login from '@/components/Login'
 import Destinations from '@/components/Destinations'
+import CreatePlace from '@/components/CreatePlace'
 
 Vue.use(Router)
 
@@ -28,6 +29,12 @@ export default new Router({
       path: '/destinations',
       name: 'destinations',
       component: Destinations
+    },
+    {
+      path: '/destinations/create',
+      name: 'places-create',
+      component: CreatePlace
     }
+
   ]
 })

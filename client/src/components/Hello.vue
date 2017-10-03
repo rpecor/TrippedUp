@@ -1,4 +1,6 @@
 <template>
+<v-layout>
+  <v-flex xs7>
   <div class="hello">
     <h1>{{ msg }}</h1>
     <h2>Essential Links</h2>
@@ -18,15 +20,27 @@
       <li><a href="https://github.com/vuejs/awesome-vue" target="_blank">awesome-vue</a></li>
     </ul>
   </div>
+  </v-flex>
+  <v-flex xs5>
+  <register xs6>
+
+  </register>
+  </v-flex>
+  
+</v-layout>
 </template>
 
 <script>
+import register from '@/components/Register'
 export default {
   name: 'hello',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      msg: 'Tripped Up'
     }
+  },
+  components: {
+    register
   }
 }
 </script>

@@ -7,18 +7,18 @@
     </v-toolbar-title>
     <v-toolbar-items>
         <v-btn 
-            v-if="!$store.state.isUserLoggedIn" flat dark to="destinations">
+            v-if="$store.state.isUserLoggedIn" flat dark to="/destinations">
             Browse
         </v-btn>
     </v-toolbar-items>
     <v-spacer></v-spacer>
     <v-toolbar-items >
         <v-btn 
-            v-if="!$store.state.isUserLoggedIn" flat dark to="login">
+            v-if="!$store.state.isUserLoggedIn" flat dark to="/login">
             Login
         </v-btn>
         <v-btn 
-            v-if="!$store.state.isUserLoggedIn" flat dark to="register">
+            v-if="!$store.state.isUserLoggedIn" flat dark to="/register">
             Sign Up
         </v-btn>
         <v-btn 

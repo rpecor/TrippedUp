@@ -5,6 +5,7 @@ import Register from '@/components/Register'
 import Login from '@/components/Login'
 import Destinations from '@/components/Destinations'
 import CreatePlace from '@/components/CreatePlace'
+import ViewPlace from '@/components/ViewPlace'
 
 Vue.use(Router)
 
@@ -34,7 +35,11 @@ export default new Router({
       path: '/destinations/create',
       name: 'places-create',
       component: CreatePlace
+    },
+    {
+      path: '/destinations/:placeId',
+      name: 'place',
+      component: ViewPlace
     }
-
   ]
 })

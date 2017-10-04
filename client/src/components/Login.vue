@@ -18,7 +18,14 @@
         ></v-text-field>
 
         <br>
-        <div class="error" v-html="error"/>
+        <v-alert
+        class="ml-2"
+        :value="error"
+        transition="scale-transition"
+        error>
+        {{error}}
+      </v-alert>
+        <!-- <div class="error" v-html="error"/> -->
         <br>
         <v-btn class="light-blue lighten-3" dark @click="login">Login</v-btn>
     </panel>
@@ -50,6 +57,9 @@ export default {
         })
         this.$store.dispatch('setToken', response.data.token)
         this.$store.dispatch('setUser', response.data.user)
+        this.$router.push({
+          name: 'destinations'
+        })
       } catch (error) {
         this.error = error.response.data.error
       }
@@ -63,9 +73,6 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-  .error {
-    color: red;
-  }
 
 
 </style>

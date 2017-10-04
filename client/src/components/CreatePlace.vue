@@ -32,6 +32,22 @@
           v-model="place.airportCode"        
         ></v-text-field>
       </panel>
+    </v-flex>
+    <v-flex xs6 class="pl-2">
+      <panel title="Map" >
+        <v-text-field 
+          label="Search city"
+          v-model="place.latitude"        
+        ></v-text-field>
+        <v-text-field 
+          label="Latitude"
+          v-model="place.latitude"        
+        ></v-text-field>
+        <v-text-field 
+          label="Longitude"
+          v-model="place.longitude"        
+        ></v-text-field>
+      </panel>
       <v-btn class="light-blue lighten-3" dark @click="create">
         Create City
       </v-btn>
@@ -51,7 +67,9 @@ export default {
         continent: null,
         placeImageUrl: null,
         youtubeId: null,
-        airportCode: null
+        airportCode: null,
+        latitude: null,
+        longitude: null
       }
     }
   },

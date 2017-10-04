@@ -5,7 +5,9 @@ module.exports = (sequelize, DataTypes) => {
     continent: DataTypes.STRING,
     placeImageUrl: DataTypes.STRING,
     youtubeId: DataTypes.STRING,
-    airportCode: DataTypes.STRING
+    airportCode: DataTypes.STRING,
+    latitude: DataTypes.FLOAT,
+    longitude: DataTypes.FLOAT
   })
 
   return Place

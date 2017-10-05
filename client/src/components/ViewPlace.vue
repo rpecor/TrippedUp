@@ -13,7 +13,12 @@
                 <div class="place-continent">
                   {{place.continent}}
                 </div>
-                
+                <div class="place-continent">
+                  {{place.latitude}}
+                </div>
+                <div class="place-continent">
+                  {{place.longitude}}
+                </div>
               </v-flex>
                 
               <v-flex xs6>
@@ -23,21 +28,40 @@
     </panel>
     </v-flex>
     <v-flex xs6>
-    <panel title="Map View">
-      {{place.city}}
+    <panel title="Place Data">
+      <gmap-map
+    :center="{lat: place.latitude, lng: place.longitude}"
+    :zoom="11"
+    style="width: 500px; height: 300px"
+  >
+    </gmap-map>
+
+    <!-- <gmap-map :center="{lat:1.38, lng:103.8}" :zoom="12"   style="width: 500px; height: 300px"> -->
+      
+    </gmap-map>
     </panel>
     </v-flex>
   </v-layout>
 </template>
 
 <script>
+
 import PlacesService from '@/services/PlacesService'
 import Panel from '@/components/Panel'
+import * as VueGoogleMaps from 'vue2-google-maps'
+import Vue from 'vue'
 
+Vue.use(VueGoogleMaps, {
+  load: {
+    key: 'AIzaSyA-6E2Wiy4dKht8zbi54HI4gYvE7Q1Z36g',
+    v: 'OPTIONAL VERSION NUMBER'
+    // libraries: 'places', //// If you need to use place input
+  }
+})
 export default {
   data () {
     return {
-      place: null
+      place: {}
     }
   },
   async mounted () {
@@ -70,4 +94,8 @@ export default {
   width:88%;
   margin: 0 auto;
 }
+.map-container {
+    width: 500px;
+    height: 300px;
+  }
 </style>

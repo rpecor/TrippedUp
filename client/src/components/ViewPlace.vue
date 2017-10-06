@@ -14,10 +14,7 @@
                   {{place.continent}}
                 </div>
                 <div class="place-continent">
-                  {{place.latitude}}
-                </div>
-                <div class="place-continent">
-                  {{place.longitude}}
+                  Airport Code: {{place.airportCode}}
                 </div>
               </v-flex>
                 

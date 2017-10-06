@@ -27,7 +27,7 @@
             </v-layout>
     </panel>
     </v-flex>
-    <v-flex xs6>
+    <v-flex xs6 class="pl-2">
     <panel title="Place Data">
       <gmap-map
     :center="{lat: place.latitude, lng: place.longitude}"

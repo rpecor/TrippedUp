@@ -4,7 +4,7 @@
   <div class="hello">
     <h1>{{ msg }}</h1>
     <br/>
-    <h3 >The first travel app built for the traveller.</h3>
+    <h3 >The first travel app built for the traveler.</h3>
     <h3>Ready to explore?</h3>
     
   </div>

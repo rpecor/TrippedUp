@@ -7,19 +7,11 @@ import Vuetify from 'vuetify'
 import { sync } from 'vuex-router-sync'
 import 'vuetify/dist/vuetify.min.css'
 import store from '@/store/store'
-import * as VueGoogleMaps from 'vue2-google-maps'
 
 Vue.config.productionTip = false
 
-Vue.use(Vuetify, (VueGoogleMaps, {
-  load: {
-    key: 'AIzaSyA-6E2Wiy4dKht8zbi54HI4gYvE7Q1Z36g',
-    libraries: 'places' // This is required if you use the Autocomplete plugin
-    // OR: libraries: 'places,drawing'
-    // OR: libraries: 'places,drawing,visualization'
-    // (as you require)
-  }
-}))
+Vue.use(Vuetify)
+
 sync(store, router)
 
 /* eslint-disable no-new */
@@ -28,5 +20,5 @@ new Vue({
   router,
   store,
   template: '<App/>',
-  components: {App, VueGoogleMaps}
+  components: {App}
 })

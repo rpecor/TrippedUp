@@ -1,4 +1,5 @@
 <template>
+<div>
   <v-layout>
     <v-flex xs6>
     <panel title="Place Data">
@@ -24,8 +25,10 @@
             </v-layout>
     </panel>
     </v-flex>
-    <v-flex xs6 class="pl-2">
-    <panel title="Place Data">
+  </v-layout>
+  <v-layout>
+    <v-flex xs6 class="pt-2">
+    <panel title="Map">
       <gmap-map
     :center="{lat: place.latitude, lng: place.longitude}"
     :zoom="11"
@@ -38,7 +41,19 @@
     </gmap-map>
     </panel>
     </v-flex>
-  </v-layout>
+  
+ 
+    <v-flex xs6 class="pl-2 pt-2">
+      <panel title="YouTube Video">
+        <youtube
+        :video-id="place.youtubeId"
+        :player-width="500"
+        :player-height="300">
+        </youtube>
+      </panel>
+    </v-flex>
+</v-layout>
+  </div>
 </template>
 
 <script>
@@ -46,6 +61,7 @@
 import PlacesService from '@/services/PlacesService'
 import Panel from '@/components/Panel'
 import * as VueGoogleMaps from 'vue2-google-maps'
+import VueYoutubeEmbed from 'vue-youtube-embed'
 import Vue from 'vue'
 
 Vue.use(VueGoogleMaps, {
@@ -55,6 +71,7 @@ Vue.use(VueGoogleMaps, {
     // libraries: 'places', //// If you need to use place input
   }
 })
+Vue.use(VueYoutubeEmbed)
 export default {
   data () {
     return {
@@ -66,7 +83,9 @@ export default {
     this.place = (await PlacesService.show(placeId)).data
   },
   components: {
-    Panel
+    Panel,
+    VueGoogleMaps,
+    VueYoutubeEmbed
   }
 }
 </script>

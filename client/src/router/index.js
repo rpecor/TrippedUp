@@ -6,6 +6,7 @@ import Login from '@/components/Login'
 import Destinations from '@/components/Destinations'
 import CreatePlace from '@/components/CreatePlace'
 import ViewPlace from '@/components/ViewPlace'
+import EditPlace from '@/components/EditPlace'
 
 Vue.use(Router)
 
@@ -40,6 +41,11 @@ export default new Router({
       path: '/destinations/:placeId',
       name: 'place',
       component: ViewPlace
+    },
+    {
+      path: '/destinations/:placeId/edit',
+      name: 'place-edit',
+      component: EditPlace
     }
   ]
 })

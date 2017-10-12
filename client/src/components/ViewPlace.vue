@@ -17,6 +17,9 @@
                 <div class="place-continent">
                   Airport Code: {{place.airportCode}}
                 </div>
+                <v-btn class="light-blue lighten-3" dark @click="Id/place-edit">
+                  Edit City
+                </v-btn>
               </v-flex>
                 
               <v-flex xs6>

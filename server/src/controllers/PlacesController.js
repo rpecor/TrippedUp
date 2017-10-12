@@ -32,5 +32,19 @@ module.exports = {
         error: 'An error has occured trying to create the place. '
       })
     }
+  },
+  async put (req, res) {
+    try {
+      const place = await Place.update(req.body, {
+        where: {
+          id: req.params.placeId
+        }
+      })
+      res.send(req.body)
+    } catch (err) {
+      res.status(500).send({
+        error: 'An error has occured trying to update the place. '
+      })
+    }
   }
 }

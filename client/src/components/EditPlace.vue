@@ -72,8 +72,8 @@
         error>
         {{error}}
       </v-alert>
-      <v-btn class="light-blue lighten-3" dark @click="create">
-        Create City
+      <v-btn class="light-blue lighten-3" dark @click="save">
+        Save City
       </v-btn>
     </v-flex>
   </v-layout>
@@ -100,7 +100,8 @@ export default {
     }
   },
   methods: {
-    async create () {
+
+    async save () {
       this.error = null
       const areAllFieldsFilledIn = Object
       .keys(this.place)
@@ -110,14 +111,26 @@ export default {
         return
       }
 
+      const placeId = this.$store.state.route.params.placeId
       try {
-        await PlacesService.post(this.place)
+        await PlacesService.put(this.place)
         this.$router.push({
-          name: 'destinations'
+          name: 'place',
+          params: {
+            placeId: placeId
+          }
         })
       } catch (err) {
         console.log(err)
       }
+    }
+  },
+  async mounted () {
+    try {
+      const placeId = this.$store.state.route.params.placeId
+      this.place = (await PlacesService.show(placeId)).data
+    } catch (err) {
+      console.log(err)
     }
   },
   components: {

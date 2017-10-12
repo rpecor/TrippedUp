@@ -15,4 +15,6 @@ module.exports = (app) => {
     PlacesController.show)
   app.post('/places',
     PlacesController.post)
+  app.put('/places/:placeId',
+    PlacesController.put)
 }

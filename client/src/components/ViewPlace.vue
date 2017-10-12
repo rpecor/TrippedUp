@@ -17,9 +17,13 @@
                 <div class="place-continent">
                   Airport Code: {{place.airportCode}}
                 </div>
-                <v-btn class="light-blue lighten-3" dark @click="Id/place-edit">
+                <v-btn 
+                class="light-blue lighten-3" 
+                dark  
+                @click="navigateTo({name: 'place-edit', params: {placeId: place.id}})">
                   Edit City
                 </v-btn>
+                
               </v-flex>
                 
               <v-flex xs6>
@@ -84,6 +88,11 @@ export default {
   async mounted () {
     const placeId = this.$store.state.route.params.placeId
     this.place = (await PlacesService.show(placeId)).data
+  },
+  methods: {
+    navigateTo (route) {
+      this.$router.push(route)
+    }
   },
   components: {
     Panel,

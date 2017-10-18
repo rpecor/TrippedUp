@@ -80,7 +80,7 @@
 </template>
 
 <script>
-import Panel from '@/components/Panel'
+
 import PlacesService from '@/services/PlacesService'
 export default {
   data () {
@@ -119,9 +119,6 @@ export default {
         console.log(err)
       }
     }
-  },
-  components: {
-    Panel
   }
 }
 </script>

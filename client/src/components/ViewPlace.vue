@@ -66,7 +66,6 @@
 <script>
 
 import PlacesService from '@/services/PlacesService'
-import Panel from '@/components/Panel'
 import * as VueGoogleMaps from 'vue2-google-maps'
 import VueYoutubeEmbed from 'vue-youtube-embed'
 import Vue from 'vue'
@@ -95,7 +94,6 @@ export default {
     }
   },
   components: {
-    Panel,
     VueGoogleMaps,
     VueYoutubeEmbed
   }

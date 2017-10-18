@@ -57,8 +57,13 @@ export default {
       this.$router.push(route)
     }
   },
-  async mounted () {
-    this.places = (await PlacesService.index()).data
+  watch: {
+    '$route.query.search': {
+      immediate: true,
+      async handler (value) {
+        this.places = (await PlacesService.index(value)).data
+      }
+    }
   }
 }
 </script>

@@ -3,9 +3,25 @@ const {Place} = require('../models')
 module.exports = {
   async index (req, res) {
     try {
-      const places = await Place.findAll({
-        limit: 10
-      })
+      let places = null
+      const search = req.query.search
+      if (req.query.search) {
+        places = await Place.findAll({
+          where: {
+            $or: [
+              'city', 'country', 'continent'
+            ].map(key => ({
+              [key]: {
+                $like: `%${search}%`
+              }
+            }))
+          }
+        })
+      } else {
+        places = await Place.findAll({
+          limit: 10
+        })
+      }
       res.send(places)
     } catch (err) {
       res.status(500).send({

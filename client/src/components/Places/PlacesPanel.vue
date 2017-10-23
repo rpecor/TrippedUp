@@ -8,7 +8,7 @@
         right
         middle
         fab
-        to="create">
+        to="destinations/create">
         <v-icon>add</v-icon>
       </v-btn>
     </div>

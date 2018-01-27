@@ -7,6 +7,8 @@ import Destinations from '@/components/Places/Index'
 import CreatePlace from '@/components/CreatePlace'
 import ViewPlace from '@/components/ViewPlace'
 import EditPlace from '@/components/EditPlace'
+import Mission from '@/components/About/Mission'
+import Team from '@/components/About/Team'
 
 Vue.use(Router)
 
@@ -46,6 +48,16 @@ export default new Router({
       path: '/destinations/:placeId/edit',
       name: 'place-edit',
       component: EditPlace
+    },
+    {
+      path: '/Mission',
+      name: 'Mission',
+      component: Mission
+    },
+    {
+      path: '/Team',
+      name: 'Team',
+      component: Team
     }
   ]
 })

@@ -2,7 +2,7 @@
 <v-toolbar fixed class="light-blue lighten-3" dark>
     <v-toolbar-title to="root" class="mr-4"> 
         <span @click="navigateTo({name: 'root'})">
-            Tripped UP
+            Tripped Up
         </span>
     </v-toolbar-title>
     <v-toolbar-items>

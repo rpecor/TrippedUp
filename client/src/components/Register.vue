@@ -1,6 +1,6 @@
 <template>
 <v-layout column>
-  <v-flex xs6 offset-xs3>
+  <v-flex xs10 offset-xs1>
       <panel title="Register"> 
         <form
         name="tripped-up-form"

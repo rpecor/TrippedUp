@@ -1,6 +1,8 @@
 <template>
-<v-layout>
-  <v-flex xs7>
+<v-container grid-list-md text-xs-center>
+<v-layout row wrap>
+  
+  <v-flex xs10 offset-xs1 md6 class="header_text">
   <div class="hello">
     <h1>{{ msg }}</h1>
     <br/>
@@ -9,13 +11,31 @@
     
   </div>
   </v-flex>
-  <v-flex xs7 md5>
-  <register xs6>
-
+  <v-flex>
+  <register >
   </register>
   </v-flex>
-  
 </v-layout>
+<br/>
+<v-layout row wrap offset-(xs1|sm1|md0)>
+  <v-flex xs10  s10 md4>
+    <div>
+      <h3>Plan Trips.</h3> 
+    </div>
+  </v-flex>
+  <v-flex xs10 offset-xs1 s10 md4>
+    <div>
+      <h3>Take Trips.</h3>
+    </div>
+  </v-flex>
+  <v-flex xs10 offset-xs1 s10 md4>
+    <div >
+    <h3>Sell Trips.</h3>
+  </div>
+  </v-flex>
+</v-layout>
+</v-container>
+
 </template>
 
 <script>
@@ -52,5 +72,8 @@ li {
 
 a {
   color: #42b983;
+}
+.header_text {
+  text-align: left;
 }
 </style>

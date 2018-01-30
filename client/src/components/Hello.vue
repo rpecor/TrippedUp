@@ -17,6 +17,7 @@
   </v-flex>
 </v-layout>
 <br/>
+<!-- TODO: Tinker with this layout and the offsets. Kind of broken right now -->
 <v-layout row wrap offset-(xs1|sm1|md0)>
   <v-flex xs10  s10 md4>
     <div>

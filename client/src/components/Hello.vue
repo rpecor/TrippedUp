@@ -9,7 +9,7 @@
     
   </div>
   </v-flex>
-  <v-flex xs5>
+  <v-flex xs7 md5>
   <register xs6>
 
   </register>

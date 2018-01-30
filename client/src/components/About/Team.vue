@@ -8,11 +8,11 @@
     <br/>
     <br/>
     <br/>
-    <h5 class="name">Always in need of motivated designers, developers, marketers and product people! Reach out if you'd like to help.</h5>
+    <h5 class="name">Could use, in this order, designers, developers, and marketers! Reach out if you'd like to help.</h5>
   </div>
   </v-flex>
   
-  <v-flex xs4>
+  <v-flex xs7>
   <div class="white elevation-2 ">
       <div class="pt-4 pl-4 pr-4 pb-4">
         <img class="image" :src="image" />

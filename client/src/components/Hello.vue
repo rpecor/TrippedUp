@@ -6,9 +6,9 @@
   <div class="hello">
     <h1>{{ msg }}</h1>
     <br/>
-    <h3 >The first travel app built for the traveler.</h3>
-    <h3>Ready to explore?</h3>
-    
+    <h2>The first ever peer to peer travel platform.</h2>
+    <!-- <h4>Ready to <v-btn flat>explore?</v-btn></h4>
+     -->
   </div>
   </v-flex>
   <v-flex>
@@ -17,22 +17,25 @@
   </v-flex>
 </v-layout>
 <br/>
+<br/>
+<br/>
+
 <!-- TODO: Tinker with this layout and the offsets. Kind of broken right now -->
-<v-layout row wrap offset-(xs1|sm1|md0)>
-  <v-flex xs10  s10 md4>
+<v-layout row wrap>
+  <v-flex xs10 offset-xs1 s10 md4 offset-md0>
     <div>
       <h3>Plan Trips.</h3> 
     </div>
   </v-flex>
-  <v-flex xs10 offset-xs1 s10 md4>
+  <v-flex xs10 offset-xs1 s10 md4 offset-md0>
     <div>
       <h3>Take Trips.</h3>
     </div>
   </v-flex>
-  <v-flex xs10 offset-xs1 s10 md4>
+  <v-flex xs10 offset-xs1 s10 md4 offset-md0>
     <div >
-    <h3>Sell Trips.</h3>
-  </div>
+      <h3>Sell Trips.</h3>
+    </div>
   </v-flex>
 </v-layout>
 </v-container>

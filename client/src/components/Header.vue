@@ -1,9 +1,13 @@
 <template>
 <v-toolbar fixed class="light-blue lighten-3" dark>
     <v-toolbar-title to="root" class="mr-4"> 
-        <span @click="navigateTo({name: 'root'})">
+        <router-link 
+        tag="span"
+        :to="{
+            name: 'root'
+        }">
             Tripped Up
-        </span>
+        </router-link>
     </v-toolbar-title>
     <v-toolbar-items>
         <v-btn 

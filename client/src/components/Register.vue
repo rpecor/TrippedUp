@@ -48,12 +48,15 @@ export default {
   methods: {
     async register () {
       try {
-        const response = await AuthenticationService.register({
+        var response = await AuthenticationService.register({
           email: this.email,
           password: this.password
         })
         this.$store.dispatch('setToken', response.data.token)
         this.$store.dispatch('setUser', response.data.user)
+        this.$router.push({
+          name: 'destinations'
+        })
       } catch (error) {
         this.error = error.response.data.error
       }
@@ -64,9 +67,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-  .error {
-    color: red;
-  }
+
 
 
 </style>

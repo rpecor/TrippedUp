@@ -1,6 +1,7 @@
 <template>
+
 <v-container grid-list-md text-xs-center>
-<v-layout row wrap>
+<v-layout row wrap header>
   
   <v-flex xs10 offset-xs1 md6 class="header_text">
   <div class="hello">
@@ -16,6 +17,7 @@
   </register>
   </v-flex>
 </v-layout>
+
 <br/>
 <br/>
 <br/>
@@ -58,7 +60,7 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+<style scoped >
 h1, h2 {
   font-weight: normal;
   position: left;
@@ -72,12 +74,14 @@ ul {
 li {
   display: inline-block;
   margin: 0 10px;
+  
 }
 
 a {
   color: #42b983;
 }
-.header_text {
+header_text {
   text-align: left;
 }
+
 </style>

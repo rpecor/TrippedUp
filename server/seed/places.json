@@ -1,0 +1,74 @@
+[
+  {
+    "city": "New York City",
+    "country": "United States of America",
+    "continent": "North America",
+    "placeImageUrl": "https://az616578.vo.msecnd.net/files/2017/03/20/636255752201745055-403309674_nyc.jpg",
+    "youtubeId": "JtfZPgWxlMI",
+    "airportCode": "JFK",
+    "latitude": 40.7128,
+    "longitude": -74.0059
+
+  },
+  {
+    "city": "Toronto",
+    "country": "Canada",
+    "continent": "North America",
+    "placeImageUrl": "http://s3.amazonaws.com/btoimage/prism-thumbnails/articles/2017314-city.jpg-resize_then_crop-_frame_bg_color_FFF-h_1365-gravity_center-q_70-preserve_ratio_true-w_2048_.jpg",
+    "youtubeId": "aHWxPTH9f0w",
+    "airportCode": "YYZ",
+    "latitude": 43.6532,
+    "longitude": -79.3832
+
+  },
+  {
+    "city": "Mexico City yaaaay",
+    "country": "Mexico",
+    "continent": "North America",
+    "placeImageUrl": "https://lonelyplanetimages.imgix.net/mastheads/93931301.jpg?sharp=10&vib=20&w=1200",
+    "youtubeId": "GUMXv0VEtoc",
+    "airportCode": "MEX",
+    "latitude": -102.5528,
+    "longitude": 23.6345
+  },
+  {
+    "city": "test one two three",
+    "country": "test",
+    "continent": "test",
+    "placeImageUrl": "test",
+    "youtubeId": "test",
+    "airportCode": "test",
+    "latitude": 23432,
+    "longitude": 23434
+  },
+  {
+    "city": "Toronto",
+    "country": "Canada",
+    "continent": "North America",
+    "placeImageUrl": "http://s3.amazonaws.com/btoimage/prism-thumbnails/articles/2017314-city.jpg-resize_then_crop-_frame_bg_color_FFF-h_1365-gravity_center-q_70-preserve_ratio_true-w_2048_.jpg",
+    "youtubeId": "aHWxPTH9f0w",
+    "airportCode": "YYZ",
+    "latitude": 43.6532,
+    "longitude": -79.3832
+  },
+  {
+    "city": "Singapore",
+    "country": "Singapore",
+    "continent": "Asia",
+    "placeImageUrl": "http://www.100resilientcities.org/wp-content/uploads/2017/06/Singapore-hero-cro.jpg",
+    "youtubeId": "2EZSBLKhAYY",
+    "airportCode": "SIN",
+    "latitude": 1.3521,
+    "longitude": 103.8198
+  },
+  {
+    "city": "Columbus",
+    "country": "United States",
+    "continent": "North America",
+    "placeImageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Columbus-ohio-skyline-panorama.jpg/1105px-Columbus-ohio-skyline-panorama.jpg",
+    "youtubeId": "4lYHBvXd3iQ",
+    "airportCode": "CMH",
+    "latitude": 39.201439,
+    "longitude": -85.921379
+  }
+]

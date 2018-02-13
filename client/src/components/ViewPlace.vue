@@ -23,7 +23,20 @@
                 @click="navigateTo({name: 'place-edit', params: {placeId: place.id}})">
                   Edit City
                 </v-btn>
-                
+                <v-btn 
+                v-if="isUserLoggedIn && !trip"
+                class="light-blue lighten-3" 
+                dark  
+                @click="addToTrip">
+                  Add to Trip
+                </v-btn>
+                <v-btn
+                v-if="isUserLoggedIn && trip"
+                class="light-blue lighten-3" 
+                dark  
+                @click="removeFromTrip">
+                  Remove from Trip
+                </v-btn>
               </v-flex>
                 
               <v-flex xs6>
@@ -45,7 +58,7 @@
 
     <!-- <gmap-map :center="{lat:1.38, lng:103.8}" :zoom="12"   style="width: 500px; height: 300px"> -->
       
-    </gmap-map>
+    
     </panel>
     </v-flex>
   
@@ -64,7 +77,8 @@
 </template>
 
 <script>
-
+import {mapState} from 'vuex'
+import TripsService from '@/services/TripsService'
 import PlacesService from '@/services/PlacesService'
 import * as VueGoogleMaps from 'vue2-google-maps'
 import VueYoutubeEmbed from 'vue-youtube-embed'
@@ -81,21 +95,61 @@ Vue.use(VueYoutubeEmbed)
 export default {
   data () {
     return {
-      place: {}
+      place: {},
+      trip: null
     }
   },
   async mounted () {
     const placeId = this.$store.state.route.params.placeId
     this.place = (await PlacesService.show(placeId)).data
   },
+  watch: {
+    async place () {
+      if (!this.isUserLoggedIn) {
+        return
+      }
+      try {
+        this.trip = (await TripsService.index({
+          placeId: this.place.id,
+          userId: this.$store.state.user.id
+        })).data
+      } catch (err) {
+        console.log(err)
+      }
+    }
+  },
+  computed: {
+    ...mapState([
+      'isUserLoggedIn',
+      'user'
+    ])
+  },
   methods: {
     navigateTo (route) {
       this.$router.push(route)
+    },
+    async addToTrip () {
+      try {
+        this.trip = (await TripsService.post({
+          placeId: this.place.id,
+          userId: this.$store.state.user.id
+        })).data
+      } catch (err) {
+        console.log(err)
+      }
+    },
+    async removeFromTrip () {
+      try {
+        this.trip = await TripsService.delete(this.trip.id)
+        this.trip = null
+      } catch (err) {
+        console.log(err)
+      }
+    },
+    components: {
+      VueGoogleMaps,
+      VueYoutubeEmbed
     }
-  },
-  components: {
-    VueGoogleMaps,
-    VueYoutubeEmbed
   }
 }
 </script>

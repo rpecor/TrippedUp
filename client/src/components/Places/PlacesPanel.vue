@@ -30,7 +30,12 @@
           <v-btn 
           class="light-blue lighten-3" 
           dark 
-          @click="navigateTo({name: 'place', params: {placeId: place.id}})">
+          :to="{
+          name: 'place', 
+          params: {
+            placeId: place.id
+            }
+          }">
           View City
           </v-btn>
         </v-flex>
@@ -50,11 +55,6 @@ export default {
   data () {
     return {
       places: null
-    }
-  },
-  methods: {
-    navigateTo (route) {
-      this.$router.push(route)
     }
   },
   watch: {

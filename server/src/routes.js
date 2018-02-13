@@ -1,6 +1,7 @@
 const AuthenticationController = require('./controllers/AuthenticationController')
 const AuthenticationControllerPolicy = require('./policies/AuthenticationControllerPolicy')
 const PlacesController = require('./controllers/PlacesController')
+const TripsController = require('./controllers/TripsController')
 
 module.exports = (app) => {
   app.post('/register',
@@ -17,4 +18,11 @@ module.exports = (app) => {
     PlacesController.post)
   app.put('/places/:placeId',
     PlacesController.put)
+
+  app.get('/trips',
+    TripsController.index)
+  app.post('/trips',
+    TripsController.post)
+  app.delete('/trips/:tripId',
+    TripsController.delete)
 }

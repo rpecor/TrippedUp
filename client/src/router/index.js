@@ -58,6 +58,10 @@ export default new Router({
       path: '/Team',
       name: 'Team',
       component: Team
+    },
+    {
+      path: '*',
+      redirect: 'root'
     }
   ]
 })

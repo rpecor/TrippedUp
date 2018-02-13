@@ -21,11 +21,6 @@ export default {
       places: null
     }
   },
-  methods: {
-    navigateTo (route) {
-      this.$router.push(route)
-    }
-  },
   async mounted () {
     this.places = (await PlacesService.index()).data
   }
